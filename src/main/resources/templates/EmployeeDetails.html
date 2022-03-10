@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Particular Employee Details</title>
+<style type="text/css">
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: yellow;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+html {
+  background-color: #f0f0f0;
+}
+
+</style>
+</head>
+<body>
+<div align="right"><a th:href="@{'/'}"><button type="submit">LogOut</button></a></div>
+<div align="center">
+<h1>From Employee Details</h1>
+     <table border="1" cellpadding="10" id="customers">
+       <thead>
+         <tr>
+           <th>EmpId</th>
+           <th>UserName</th>
+           <th>FullName</th>
+           <th>Address</th>
+           <th>PhoneNo.</th>
+           <th>Email</th>
+           <th>Salary</th>
+           <th>Actions</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr th:each="table:${emp}">
+            <td th:text="${table.empid}"></td>
+            <td th:text="${table.username}"></td>
+            <td th:text="${table.fullname}"></td>
+            <td th:text="${table.address}"></td>
+            <td th:text="${table.phoneno}"></td>
+            <td th:text="${table.email}"></td>
+            <td th:text="${table.salary}"></td>
+            <td>
+               <a th:href="@{'/edit/' + ${table.empid}}">Edit</a>
+           </td>
+        </tr>
+      </tbody>
+    </table>
+    <div align="center"><a th:href="@{'/'}"><button type="submit">Back</button></a></div>
+  </div>
+</body>
+</html>

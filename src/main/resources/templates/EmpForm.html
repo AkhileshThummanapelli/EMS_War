@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>From Employee Create New Employee Form from Employee</title>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=tel], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=reset] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+ 
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+body{
+background-color:#787878;
+}
+h1 {
+  color:white;
+}
+.error{
+color:red;
+}
+</style>
+</head>
+<body>
+<div align="right"><a href="/"><button type="submit">LogOut</button></a></div>
+<h1 align="center">Create New Employee</h1>
+  <div align="center">
+    
+     <form action="#" th:action="@{'/NewEmployee'}" th:object="${e}" method="post">
+       <table border="0" cellpadding="10">
+ 
+        
+         <tr>
+            <td>Full Name:</td>
+            <td><input type="text" minlength=5 required th:field="*{fullname}" /></td>
+            <td th:if="${#fields.hasErrors('fullname')}" th:errorclass="error"
+             th:errors="*{fullname}" />
+         </tr>
+         <tr>
+            <td>Address:</td>
+            <td><input type="text" th:field="*{address}" /></td>
+         </tr>
+         <tr>
+            <td>Phone No.:</td>
+            <td><input type="tel" maxlength=10  th:field="*{phoneno}" /></td>
+            <td th:if="${#fields.hasErrors('phoneno')}" th:errorclass="error"
+             th:errors="*{phoneno}" />
+         </tr>
+         <tr>
+            <td>Email:</td>
+            <td><input type="email"  th:field="*{email}" /></td>
+         </tr>
+         <tr>
+            <td>Salary:</td>
+            <td><input type="text" minlength=5 th:field="*{salary}" /></td>
+         </tr>
+         <tr>
+             <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <input type="submit">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <input type="reset"></td>
+         </tr>
+       </table>
+        
+      </form>  
+    <div>
+  
+</body>
+</html>

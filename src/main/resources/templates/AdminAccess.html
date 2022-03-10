@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to Admin</title>
+<link rel="stylesheet" th:href="@{/css/emperrorbackground.css}" />
+<!-- <link rel="stylesheet" th:href="@{/css/adminbutton.css}" /> -->
+<link rel="stylesheet" th:href="@{/css/button.css}" />
+<style type="text/css">
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+</style>
+</head>
+<body><br><br><br>
+<div align="right"><a th:href="@{'/'}"><button type="submit">LogOut</button></a></div>
+<div class="content">
+
+<!--  <body><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+<div class="d-flex flex-column justify-content-center w-100 h-100" align="center">
+
+	<div class="d-flex flex-column justify-content-center align-items-center" >
+		<h1>Welcome Admin...!</h1><br>
+		<div class="btn-group my-5" align="center">
+			<a th:href="@{'/getUsersTables'}"><button type="submit"><span class="text">User Details</span></button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{'/getEmployeesTables'}"><button type="submit"><span class="text">Employee Details</span></button></a>
+		</div>
+	</div><br>
+	<div ><a th:href="@{'/'}"><button type="submit">Back</button></a></div>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+     <hr>
+            <h2 align="center"><b>EmployeeInfo</b></h2>
+     <hr>
+     <table >
+     
+           <tr>
+			      <th bgcolor="#F5A9A9"> EmployeeId </th>
+			      <th bgcolor="#F5A9A9"> UserName </th>
+			      <th bgcolor="#F5A9A9"> FullName </th>
+			      <th bgcolor="#F5A9A9"> Address </th>
+			      <th bgcolor="#F5A9A9"> PhoneNumber </th>
+			      <th bgcolor="#F5A9A9"> Email </th>
+			      <th bgcolor="#F5A9A9"> Salary </th>
+			      <th bgcolor="#F5A9A9"> Action </th>
+	       </tr> 
+	            
+	      <tr th:each="com:${emp}">
+			   <td bgcolor="#E0F8F7"
+			        th:text="${com.employeeId}" >		  
+			   </td>
+			   <td bgcolor="#E0F8F7"
+			        th:text="${com.username}" >		  
+			   </td>
+			   <td bgcolor="#E0F8F7"
+			        th:text="${com.fullname}" >		  
+			   </td>
+			   <td bgcolor="#E0F8F7"
+			        th:text="${com.address}" >		  
+			   </td>
+			   <td bgcolor="#E0F8F7"
+			        th:text="${com.phNo}" >		  
+			   </td>
+			   <td bgcolor="#E0F8F7"
+			        th:text="${com.email}" >		  
+			   </td>
+			   <td bgcolor="#E0F8F7"
+			        th:text="${com.salary}" >		  
+			   </td>
+			   <td bgcolor="#E0F8F7">	
+			      <a th:href="@{'/getUpdatedInfo/' + ${com.employeeId}}">Edit</a>
+			   </td>
+	     </tr>
+	     
+    </table>
+
+</body>
+</html>

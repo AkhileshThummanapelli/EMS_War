@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Employee Details</title>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=reset] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+ 
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+body{
+background-color:#787878;
+}
+h1 {
+  color:black;
+}
+   
+  .error{
+     color:red;
+   }
+ </style>
+</head>
+<body>
+<div align="right"><a th:href="@{'/'}"><button type="submit">LogOut</button></a>
+  <div align="center">
+  <h1 align="center"><b><i>Edit Employee Details</i></b></h1>
+     <form action="#" th:action="@{/NewEmployee}" th:object="${em}" method="post">
+       <table>
+         <tr>
+            <td>Emp Id:</td>
+            <td><input type="text" th:field="*{empid}"  readonly="readonly"/></td>
+         </tr>
+         <tr>
+            <td>User Name:</td>
+            <td><input type="text" th:field="*{username}" /></td>
+         </tr>
+         <tr>
+            <td>Full Name:</td>
+            <td><input type="text" th:field="*{fullname}" /></td>
+         </tr>
+         <tr>
+            <td>Address:</td>
+            <td><input type="text" th:field="*{address}" /></td>
+         </tr>
+         <tr>
+            <td>Phone No.:</td>
+            <td><input type="text" th:field="*{phoneno}" /></td>
+            <td th:if="${#fields.hasErrors('phoneno')}" th:errorclass="error"
+             th:errors="*{phoneno}"/>
+         </tr>
+         <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}" /></td>
+         </tr>
+         <tr>
+            <td>Salary:</td>
+            <td><input type="text" th:field="*{salary}" /></td>
+            <td th:if="${#fields.hasErrors('salary')}" th:errorclass="error"
+              th:errors="*{salary}"/>
+         </tr>
+         <tr>
+        <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <input type="reset"></td>
+         </tr>  
+       </table>
+      </form>
+    </div>
+</body>
+</html>

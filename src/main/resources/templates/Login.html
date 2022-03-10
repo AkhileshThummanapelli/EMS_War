@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lan="en" and dir="Itr">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<style type="text/css">
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+body {background-color: hsla(120, 100%, 75%, 0.3);}  /* light green with opacity */
+h1 {
+  text-shadow: 2px 2px red;
+}
+</style>
+</head>
+<body><br><br><br>
+  <div align="center">
+    <form class="box" action="check" method="post">
+      <h1><b>Login Page</b></h1><br><br>
+       Enter Name:<input type="text" name="username" placeholder="Enter User Name" required><br><br>
+       Enter Password:<input type="password" name="password" placeholder="Enter Password" required><br><br>
+       <button class="button button1" type="submit">Login</button>
+       <button class="button button1" type="reset">cancel</button>
+      
+    </form>
+  </div>
+</body>
+</html>

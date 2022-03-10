@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="right"><a href="/"><button type="submit">LogOut</button></a></div>
+  <div align="center">
+    <h1>Edit Employee Details</h1>
+     <form action="#" th:action="@{/UpdateEmployee}" th:object="${e}" method="post">
+       <table border="0" cellpadding="10">
+         <tr>
+            <td>Full Name:</td>
+            <td><input type="text" th:field="*{fullname}" readonly="readonly" /></td>
+         </tr>
+         <tr>
+            <td>Address:</td>
+            <td><input type="text" th:field="*{address}" /></td>
+         </tr>
+         <tr>
+            <td>Phone No.:</td>
+            <td><input type="text" th:field="*{phoneno}" /></td>
+         </tr>
+         <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}" /></td>
+         </tr>
+         <tr>
+            <td>Salary:</td>
+            <td><input type="text" th:field="*{salary}" /></td>
+         </tr>
+         <tr>
+             <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <button type="submit">Save</button>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <button type="reset">Cancel</button></td>
+         </tr>
+       </table>
+      </form>
+    <div>
+
+</body>
+</html>
