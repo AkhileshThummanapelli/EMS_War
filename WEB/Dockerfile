@@ -1,4 +1,4 @@
-FROM akhileshdockerr/tomcat:latest
+FROM bhanukiran213/mytomcat:latest
 MAINTAINER Akhilesh
 # COPY path-to-your-application-war path-to-webapps-in-docker-tomcat
 COPY ./target/ems.war /opt/tomcat/webapps/
